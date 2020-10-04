@@ -1,0 +1,25 @@
+<%= render 'action_menu'-%>
+
+<h2><%= l(:label_announcements) %></h2>
+
+<table class="list">
+  <thead>
+  <tr>
+    <th><%= l(:field_name) %></th>
+    <th><%= l(:field_message) %></th>
+    <th><%= l(:field_starts_at) %></th>
+    <th><%= l(:field_ends_at) %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @announcements.each do |announcement| %>
+      <tr class='issue'>
+        <td><%= link_to announcement.name, _edit_project_announcement_path(@project, announcement) %></td>
+        <td><%= link_to announcement.message.strip[0..30], _edit_project_announcement_path(@project, announcement) %></td>
+        <td><%= format_time(announcement.starts_at) %></td>
+        <td><%= format_time(announcement.ends_at) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+

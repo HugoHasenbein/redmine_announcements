@@ -1,0 +1,22 @@
+<%= render 'action_menu'-%>
+
+<h2><%= @announcement.name %></h2>
+<div class="box">
+  <table class="attributes">
+    <tbody>
+    <tr>
+      <th><%= l(:field_message) %></th>
+      <td><%= @announcement.message %></td>
+    </tr>
+    <tr>
+      <th><%= l(:field_starts_at) %></th>
+      <td><%= format_time(@announcement.starts_at) %></td>
+    </tr>
+    <tr>
+      <th><%= l(:field_ends_at) %></th>
+      <td><%= format_time(@announcement.ends_at) %></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

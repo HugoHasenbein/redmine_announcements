@@ -1,0 +1,7 @@
+<% if @message %>
+  <fieldset class="preview"><legend><%= l(:field_message) %></legend>
+    <div class='<%= @announcement&.css_classes %>'>
+      <%= textilizable @message, :object => @announcement %>
+    </div>
+  </fieldset>
+<% end %>

@@ -1,0 +1,14 @@
+<%= content_tag :div, :class => "contextual" do -%>
+  <%- if @announcement %>
+    <%- if @announcement.new_record? %>
+      <!-- no action menu items -->
+    <%- else -%>
+      <%- unless action_name == 'edit' %>
+      <%= link_to(l(:button_edit), _edit_project_announcement_path(@project, @announcement), :class => 'icon icon-edit') %>
+      <%- end %>
+      <%= link_to(l(:button_delete),    _project_announcement_path(@project, @announcement), :class => 'icon icon-del', :confirm => l(:text_are_you_sure), :method => :delete ) %>
+    <%- end %>
+  <%- else %>
+    <%= link_to(l(:label_new_announcement), _new_project_announcement_path(@project),        :class => "icon icon-add") %>
+  <%- end %>
+<% end -%>

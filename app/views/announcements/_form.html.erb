@@ -1,0 +1,59 @@
+<%= render_flash_messages %>
+<%- flash.clear %>
+
+<%= error_messages_for 'announcement' %>
+
+<%= labelled_form_for @announcement, 
+      { :url => _create_or_edit_project_announcement_path(@project, @announcement),
+        :method => @announcement.new_record? ? :post : :put,
+        :html => {:id => "announcement-form" }
+      } do |f| %>
+    
+  <p>
+    <%= f.text_field :name %>
+  </p>
+  
+  <p>
+    <%= f.text_area :message,
+                   :cols => 60,
+                   :rows => [[10, @announcement.message.to_s.length / 50].max, 20].min,
+                   :accesskey => accesskey(:edit),
+                   :class => 'wiki-edit',
+                   :no_label => true %>
+  </p>
+  <%- if Redmine::VERSION::MAJOR < 4 %>
+    <%= wikitoolbar_for 'announcement_message' %>
+  <%- elsif @project %>
+    <%= wikitoolbar_for 'announcement_message', preview_announcement_path(:project_id => @project.id, :id => @announcement.id) %>
+  <%- else %>
+    <%= wikitoolbar_for 'announcement_message' %>
+  <%- end %>
+  <p>
+    <%= f.select :kind, Announcement.kinds_for_select %>
+  </p>
+  
+  <p>
+    <%= f.label :starts_at, l(:field_starts_at) %>
+    <%= f.datetime_select :starts_at %>
+  </p>
+  
+  <p>
+    <%= f.label :ends_at, l(:field_ends_at) %>
+    <%= f.datetime_select :ends_at %>
+  </p>
+  
+  <p>
+    <%= f.check_box :public, :disabled => (!User.current.admin? || !!@project) %>
+  </p>
+  
+  <p class="button"><%= f.submit l(:button_submit) %></p>
+  
+  <%- if Redmine::VERSION::MAJOR < 4 %>
+    <%= preview_link preview_announcement_path(:project_id => @project && @project.id, :id => @announcement.id), 'announcement-form' %>
+  <%- end %>
+  
+<% end %>
+
+<% heads_for_wiki_formatter %>
+
+<div id="preview" class="wiki"></div>

@@ -1,0 +1,71 @@
+# encoding: utf-8
+#
+# Redmine plugin for displaying announcements in the user interface
+#
+# originally publisehd by Sandeep Kumar / sandeepleo11
+# migrated to Redmine 4.1 and enhanced by Stephan Wenzel
+#
+# Copyright © 2020 Stephan Wenzel <stephan.wenzel@drwpatent.de>
+#                  as far as not originally created by Sandeep Kumar
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
+
+de:
+  #------------------------------------------------------------------------------------- #
+  # Project module name
+  #------------------------------------------------------------------------------------- #
+  project_module_announcements:                            "Ankündigungen"
+  
+  #------------------------------------------------------------------------------------- #
+  # Permissions
+  #------------------------------------------------------------------------------------- #
+  permission_view_announcements:                           "Ankündigungen sehen"
+  permission_launch_announcements:                         "Ankündigungen auslösen"
+  permission_edit_announcements:                           "Ankündigungen bearbeiten"
+  permission_delete_announcements:                         "Ankündigungen löschen"
+  
+  #------------------------------------------------------------------------------------- #
+  # Fields
+  #------------------------------------------------------------------------------------- #
+  field_message:                                           'Inhalt'
+  field_kind:                                              'Art'
+  field_public:                                            'öffentlich'
+  field_starts_at:                                         'Start'
+  field_ends_at:                                           'Ende'
+  
+  #------------------------------------------------------------------------------------- #
+  # Labels
+  #------------------------------------------------------------------------------------- #
+  label_announcements:                                     'Ankündigungen'
+  label_new_announcement:                                  'Neue Ankündigung'
+  
+  #------------------------------------------------------------------------------------- #
+  # Messages
+  #------------------------------------------------------------------------------------- #
+  label_cannot_be_blank:                                   "darf nicht leer sein"
+  label_already_assigned:                                  "ist bereits vergeben"
+  
+  label_notice:                                            "Mitteilung"
+  label_warning:                                           "Warnung"
+  label_error:                                             "Fehler"
+  
+  label_announcement_created:                              "Ankündigung wurde erfolgreich gespeichert."
+  label_announcement_not_created:                          "Ankündigung konnte nicht gespeichert werden."
+  label_announcement_updated:                              "Ankündigung wurde erfolgreich aktualisiert."
+  label_announcement_not_ updated:                         "Ankündigung konnte nicht aktualisiert werden"
+  
+  label_hide_announcements:                                "Ankündigungen schließen"
+

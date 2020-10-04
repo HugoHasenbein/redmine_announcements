@@ -1,0 +1,21 @@
+<%- if project.nil? || project.module_enabled?(:announcements) %>
+  <% if current_announcements.any? %>
+    <% for announcement in current_announcements %>
+      <div id="announcementtop-<%= announcement.id %>" class='<%= announcement.css_classes %>'>
+        <p><%= announcement.project&.name %></p>
+        <p><%= h textilizable(announcement.message) %></p>
+        <p><%= link_to l(:label_hide_announcements), hide_announcements_path if User.current.logged? %></p>
+      </div>
+      <%= javascript_tag "$(document).ready(function(){$('#content').prepend($('#announcementtop-#{announcement.id}'))});" %>
+    <% end %>
+    <% for announcement in current_announcements %>
+      <div id="announcementbottom-<%= announcement.id %>" class='<%= announcement.css_classes %>'>
+        <p><%= h announcement.project&.name %></p>
+        <p><%= h textilizable(announcement.message) %></p>
+        <p><%= link_to l(:label_hide_announcements), hide_announcements_path if User.current.logged? %></p>
+      </div>
+      <%= javascript_tag "$(document).ready(function(){$('#content').append($('#announcementbottom-#{announcement.id}'))});" %>
+    <% end %>
+  <%- end %>
+<%- end %>
+

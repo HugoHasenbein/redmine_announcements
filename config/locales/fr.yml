@@ -1,0 +1,71 @@
+# encoding: utf-8
+#
+# Redmine plugin for displaying announcements in the user interface
+#
+# originally publisehd by Sandeep Kumar / sandeepleo11
+# migrated to Redmine 4.1 and enhanced by Stephan Wenzel
+#
+# Copyright © 2020 Stephan Wenzel <stephan.wenzel@drwpatent.de>
+#                  as far as not originally created by Sandeep Kumar
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
+
+fr:
+  #------------------------------------------------------------------------------------- #
+  # Project module name
+  #------------------------------------------------------------------------------------- #
+  project_module_announcements:                            "Annonces"
+  
+  #------------------------------------------------------------------------------------- #
+  # Permissions
+  #------------------------------------------------------------------------------------- #
+  permission_view_announcements:                           "Voir les annonces"
+  permission_launch_announcements:                         "Faire des annonces"
+  permission_edit_announcements:                           "Editer les annonces"
+  permission_delete_announcements:                         "Effacer les annonces "
+  
+  #------------------------------------------------------------------------------------- #
+  # Fields
+  #------------------------------------------------------------------------------------- #
+  field_message:                                           'Message'
+  field_kind:                                              'Genre'
+  field_starts_at:                                         'À Partir De'
+  field_ends_at:                                           'Fini le'
+  
+  #------------------------------------------------------------------------------------- #
+  # Labels
+  #------------------------------------------------------------------------------------- #
+  label_announcements:                                     'Annonces'
+  label_new_announcement:                                  'nouveau Annonce'
+  
+  #------------------------------------------------------------------------------------- #
+  # Messages
+  #------------------------------------------------------------------------------------- #
+  label_cannot_be_blank:                                   "e peut pas être vide"
+  label_already_assigned:                                  "a déjà été assigné"
+  
+  label_notice:                                            "Avis"
+  label_warning:                                           "Attention"
+  label_error:                                             "Erreur"
+  
+  label_announcement_created:                              "Annonce a été créé avec succès."
+  label_announcement_not_created:                          "Annonce could not be saved."
+  label_announcement_updated:                              "Annonce a été correctement mis à jour."
+  label_announcement_not_ updated:                         "Annonce n'a pas pu être mis à jour."
+  
+  label_hide_announcements:                                "Cacher les annonces"
+
+
